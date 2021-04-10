@@ -1,0 +1,24 @@
+fisrt,last=input().split()
+fisrt=int(fisrt)
+last=int(last)
+
+N=int(input())
+find=list()
+num=list()
+for i in range(N):
+    a=int(input())
+    find.append(a)
+
+find=sorted(find)
+click=0
+
+for i in find:
+    num.append(abs(i-last))
+
+if abs(fisrt-last)>min(num):
+    click=1+min(num)
+    print(click)
+else:
+    print(abs(fisrt-last))
+
+
