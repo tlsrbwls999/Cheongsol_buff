@@ -1,0 +1,33 @@
+R,C=map(int,input().split())
+
+graph=list()
+
+for i in range(R):
+    graph.append(list(input()))
+
+dx=[-1,1,0,0]
+dy=[0,0,-1,1]
+
+flag=True
+
+for x in range(R):
+    for y in range(C):
+        if graph[x][y]=='.':
+            graph[x][y]='D'
+        elif graph[x][y]=='W':
+            for a in range(4):
+                nx=x+dx[a]
+                ny=y+dy[a]
+                if nx<0 or ny<0 or nx>=R or ny>=C:
+                    continue
+                if graph[nx][ny]=='S':
+                    flag=False
+                    break
+            
+if flag:
+    print(1)
+    for i in graph:
+        print(''.join(i))
+else:
+    print(0)
+                
