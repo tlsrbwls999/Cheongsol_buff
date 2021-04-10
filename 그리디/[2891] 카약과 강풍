@@ -1,0 +1,19 @@
+team_num,S,R=map(int,input().split())
+
+S_team=list(map(int,input().split()))
+
+R_team=list(map(int,input().split()))
+
+
+result=len(S_team)
+
+for i in S_team:
+    for j in R_team:
+        if i-1==j or i+1==j or i==j:
+            result-=1
+            R_team.remove(j)
+            break
+        
+print(result)
+
+
